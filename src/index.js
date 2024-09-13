@@ -9,9 +9,13 @@
 import normalizeInteger from './normalize-integer';
 import normalizeDate from './normalize-date';
 import normalizeTimestamp from './normalize-timestamp';
+import Normalizer from './normalizer';
 
 export {
   normalizeInteger,
   normalizeDate,
   normalizeTimestamp,
+  Normalizer,
 };
+
+export default Normalizer;
