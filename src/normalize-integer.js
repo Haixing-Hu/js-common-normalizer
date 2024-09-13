@@ -18,7 +18,12 @@
 function normalizeInteger(value) {
   if (value === undefined || value === null) {
     return value;
-  } else if (typeof value === 'string') {
+  }
+  const type = typeof value;
+  if (type === 'bigint') {
+    return value;     // support native bigint
+  }
+  if (type === 'string') {
     if (value === '') {
       return 0;
     } if (/^\s*[+-]?\d+\s*$/.test(value)) {
@@ -26,7 +31,7 @@ function normalizeInteger(value) {
     } else {
       throw new RangeError(`Invalid integer format: ${value}`);
     }
-  } else if (typeof value === 'number') {
+  } else if (type === 'number') {
     if (Number.isInteger(value)) {
       return Math.floor(value);   // 删除小数点后面可能的0
     } else {

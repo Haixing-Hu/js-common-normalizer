@@ -78,4 +78,9 @@ describe('normalizeInteger', () => {
     const value = new Number(123.99);
     expect(() => normalizeInteger(value)).toThrow('Invalid integer value');
   });
+  test('normalizeInteger(123n)', () => {
+    const value = 123n;
+    const result = normalizeInteger(value);
+    expect(result).toBe(123n);
+  });
 });
