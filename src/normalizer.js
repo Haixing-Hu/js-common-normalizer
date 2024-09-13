@@ -23,7 +23,7 @@ const Normalizer = {
   int: normalizeInteger,
   mobile: trimUppercaseString,
   money: stringToMoney,
-  name: trimUppercaseString,
+  personName: trimUppercaseString,
   phone: trimUppercaseString,
   timestamp: normalizeTimestamp,
   trim: trimString,
