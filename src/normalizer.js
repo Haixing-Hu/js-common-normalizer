@@ -18,7 +18,7 @@ import normalizeTimestamp from './normalize-timestamp';
  */
 const Normalizer = {
   date: normalizeDate,
-  float: stringToFloat,
+  number: stringToFloat,
   id: normalizeInteger,
   int: normalizeInteger,
   mobile: trimUppercaseString,
