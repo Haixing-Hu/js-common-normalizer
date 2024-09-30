@@ -6,17 +6,12 @@
 //    All rights reserved.
 //
 ////////////////////////////////////////////////////////////////////////////////
-import dayjs from 'dayjs';
-import utc from 'dayjs/plugin/utc.js'; // 必须加上后缀 .js，否则引用此库的 vitest 会报错
-import customParseFormat from 'dayjs/plugin/customParseFormat.js'; // 必须加上后缀 .js，否则引用此库的 vitest 会报错
-
-dayjs.extend(utc);
-dayjs.extend(customParseFormat);
+import normalizeDateTimeImpl from './impl/normalize-date-time-impl';
 
 /**
  * 可解析的时间戳格式。
  */
-const CUSTOM_PARSE_FORMAT = [
+const PARSE_FORMATS = [
   'YYYY-M-D',
   'YYYY-M-Dz',
   'YYYY-M-DZ',
@@ -38,6 +33,13 @@ const CUSTOM_PARSE_FORMAT = [
 ];
 
 /**
+ * 时间戳的标准显示格式。
+ *
+ * @type {string}
+ */
+const DISPLAY_FORMAT = 'YYYY-MM-DDTHH:mm:ss.SSS[Z]';
+
+/**
  * 将某个字段值正则化为表示时间戳的字符串。
  *
  * @param {String|Date} value
@@ -46,32 +48,7 @@ const CUSTOM_PARSE_FORMAT = [
  *     正则化的结果。
  */
 function normalizeTimestamp(value) {
-  // console.log('normalizeTimestamp: value = ', value);
-  if ((value === undefined) || (value === null) || (value === '')) {
-    return value;
-  } else if (typeof value === 'string') {
-    // 注意: customParseFormat插件如果以数组形式传递自定义解析格式，则不能正确处理时区
-    // 参考这个issue: https://github.com/iamkun/dayjs/issues/1750
-    // const timestamp = dayjs.utc(value, CUSTOM_PARSE_FORMAT, false);
-    // if (!timestamp.isValid()) {
-    //   throw new RangeError(`Invalid timestamp value: ${value}`);
-    // }
-    let timestamp = null;
-    for (const format of CUSTOM_PARSE_FORMAT) {
-      const t = dayjs.utc(value, format, false);
-      if (t.isValid()) {
-        timestamp = t;      // 永远使用后面的匹配，即更严格的匹配
-      }
-    }
-    if (timestamp === null) {
-      throw new RangeError(`Invalid timestamp value: ${value}`);
-    }
-    return timestamp.toISOString();
-  } else if (value instanceof Date) {
-    return dayjs(value).toISOString();
-  } else {
-    throw new RangeError(`Invalid timestamp format: type is ${typeof value}`);
-  }
+  return normalizeDateTimeImpl(value, PARSE_FORMATS, DISPLAY_FORMAT);
 }
 
 export default normalizeTimestamp;

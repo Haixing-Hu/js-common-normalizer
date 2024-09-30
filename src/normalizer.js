@@ -8,8 +8,10 @@
 ////////////////////////////////////////////////////////////////////////////////
 import { trimString, trimUppercaseString, stringToFloat, stringToMoney } from '@haixing_hu/common-util';
 import normalizeDate from './normalize-date';
-import normalizeInteger from './normalize-integer';
+import normalizeDateTime from './normalize-date-time';
+import normalizeTime from './normalize-time';
 import normalizeTimestamp from './normalize-timestamp';
+import normalizeInteger from './normalize-integer';
 
 /**
  * 提供一个更方便使用的`Normalizer`对象。
@@ -18,6 +20,9 @@ import normalizeTimestamp from './normalize-timestamp';
  */
 const Normalizer = {
   date: normalizeDate,
+  datetime: normalizeDateTime,
+  time: normalizeTime,
+  timestamp: normalizeTimestamp,
   number: stringToFloat,
   id: normalizeInteger,
   int: normalizeInteger,
@@ -25,7 +30,6 @@ const Normalizer = {
   money: stringToMoney,
   personName: trimUppercaseString,
   phone: trimUppercaseString,
-  timestamp: normalizeTimestamp,
   trim: trimString,
   trimUppercase: trimUppercaseString,
 };

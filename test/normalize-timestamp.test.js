@@ -17,12 +17,12 @@ describe('normalizeTimestamp', () => {
   test('normalizeTimestamp(undefined)', () => {
     const value = undefined;
     const result = normalizeTimestamp(value);
-    expect(result).toBeUndefined();
+    expect(result).toBe('');
   });
   test('normalizeTimestamp(null)', () => {
     const value = null;
     const result = normalizeTimestamp(value);
-    expect(result).toBeNull();
+    expect(result).toBe('');
   });
   test('normalizeTimestamp("")', () => {
     const value = '';

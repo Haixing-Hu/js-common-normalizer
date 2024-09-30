@@ -45,7 +45,7 @@ function normalizeInteger(value) {
       throw new RangeError(`Invalid integer value: ${value}`);
     }
   } else {
-    throw new RangeError(`Invalid integer format: type is ${typeof value}`);
+    throw new TypeError(`Invalid integer type: actual type is ${typeof value}`);
   }
 }
 
