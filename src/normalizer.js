@@ -30,6 +30,7 @@ const Normalizer = {
   money: stringToMoney,
   personName: trimUppercaseString,
   phone: trimUppercaseString,
+  url: trimString,
   trim: trimString,
   trimUppercase: trimUppercaseString,
 };
