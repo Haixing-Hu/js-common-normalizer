@@ -6,7 +6,7 @@
 //    All rights reserved.
 //
 ////////////////////////////////////////////////////////////////////////////////
-import { normalizeDate, normalizeDateTime } from '../src';
+import { normalizeDateTime } from '../src';
 
 describe('normalizeDateTime', () => {
   test('should handle null input gracefully', () => {
