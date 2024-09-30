@@ -31,6 +31,7 @@ const Normalizer = {
   personName: trimUppercaseString,
   phone: trimUppercaseString,
   url: trimString,
+  email: trimString,
   trim: trimString,
   trimUppercase: trimUppercaseString,
 };
