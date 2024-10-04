@@ -12,6 +12,7 @@ import normalizeDateTime from './normalize-date-time';
 import normalizeTime from './normalize-time';
 import normalizeTimestamp from './normalize-timestamp';
 import normalizeInteger from './normalize-integer';
+import normalizeBool from './normalize-bool';
 
 /**
  * 提供一个更方便使用的`Normalizer`对象。
@@ -19,6 +20,7 @@ import normalizeInteger from './normalize-integer';
  * @type object
  */
 const Normalizer = {
+  bool: normalizeBool,
   date: normalizeDate,
   datetime: normalizeDateTime,
   time: normalizeTime,
