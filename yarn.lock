@@ -1467,18 +1467,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@haixing_hu/clone@npm:^1.7.1":
-  version: 1.7.1
-  resolution: "@haixing_hu/clone@npm:1.7.1"
-  peerDependencies:
-    "@babel/runtime": ^7.23.0
-    "@haixing_hu/naming-style": ^1.3.0
-    "@haixing_hu/type-detect": ^1.1.0
-    "@haixing_hu/typeinfo": ^3.0.0
-  checksum: 10c0/aa2e4fd9ae9cd845fe0c1cd90e65f860bcd77f056877e51e41237d176aa0a08edc730f558c872cc29e07aa798870296f99f9765a0679cf02a0412b2194834ad7
-  languageName: node
-  linkType: hard
-
 "@haixing_hu/common-normalizer@workspace:.":
   version: 0.0.0-use.local
   resolution: "@haixing_hu/common-normalizer@workspace:."
@@ -1489,8 +1477,7 @@ __metadata:
     "@babel/plugin-transform-runtime": "npm:^7.24.0"
     "@babel/preset-env": "npm:^7.24.0"
     "@babel/runtime": "npm:^7.24.0"
-    "@haixing_hu/clone": "npm:^1.7.1"
-    "@haixing_hu/common-util": "npm:^5.0.0"
+    "@haixing_hu/common-util": "npm:^5.1.0"
     "@haixing_hu/eslint-config": "npm:^1.3.3"
     "@haixing_hu/jsdoc-minami": "npm:^1.5.1"
     "@haixing_hu/logging": "npm:^1.3.3"
@@ -1524,14 +1511,14 @@ __metadata:
     rollup-plugin-visualizer: "npm:^5.12.0"
   peerDependencies:
     "@babel/runtime": ^7.23.6
-    "@haixing_hu/common-util": ^5.0.0
+    "@haixing_hu/common-util": ^5.1.0
     dayjs: ^1.11.10
   languageName: unknown
   linkType: soft
 
-"@haixing_hu/common-util@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "@haixing_hu/common-util@npm:5.0.0"
+"@haixing_hu/common-util@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "@haixing_hu/common-util@npm:5.1.0"
   dependencies:
     deep-equal: "npm:^2.0.5"
     json-beautify: "npm:^1.1.1"
@@ -1539,7 +1526,7 @@ __metadata:
   peerDependencies:
     "@babel/runtime": ^7.23.2
     "@haixing_hu/typeinfo": ^3.0.0
-  checksum: 10c0/ad0d305143246b474229d275cdab91ae5edca565b7fa439f288c7fa9070e872dcf001a25bf2e10be5a63a9d1feb48e5a0025cb92917fe7522a8956447c12d829
+  checksum: 10c0/8e7da367ba2306413eb5d43c2896c462c6cb147b5594c5ccbfeac553ca25b723a3edb1b839d95ae64b60fb6c89cfe7433669c47a68b86f4d29d08b18c4aca64a
   languageName: node
   linkType: hard
 
