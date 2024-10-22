@@ -17,7 +17,7 @@ describe('normalizeInteger', () => {
   test('normalizeInteger(undefined)', () => {
     const value = undefined;
     const result = normalizeInteger(value);
-    expect(result).toBeUndefined();
+    expect(result).toBeNull();
   });
   test('normalizeInteger(null)', () => {
     const value = null;
@@ -41,15 +41,25 @@ describe('normalizeInteger', () => {
   test('normalizeInteger("")', () => {
     const value = '';
     const result = normalizeInteger(value);
-    expect(result).toBe(0);
+    expect(result).toBeNull();
   });
-  test('normalizeInteger("123")', () => {
-    const value = '123';
+  test('normalizeInteger("  ")', () => {
+    const value = '  ';
+    const result = normalizeInteger(value);
+    expect(result).toBeNull();
+  });
+  test('normalizeInteger("123  ")', () => {
+    const value = '123  ';
     const result = normalizeInteger(value);
     expect(result).toBe(123);
   });
-  test('normalizeInteger("123.00")', () => {
-    const value = '123.00';
+  test('normalizeInteger(new String("123  "))', () => {
+    const value = new String('123  ');
+    const result = normalizeInteger(value);
+    expect(result).toBe(123);
+  });
+  test('normalizeInteger("  123.00 ")', () => {
+    const value = '  123.00 ';
     expect(() => normalizeInteger(value)).toThrow('Invalid integer format');
   });
   test('normalizeInteger("123.11")', () => {
