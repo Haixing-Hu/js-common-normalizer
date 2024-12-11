@@ -98,4 +98,9 @@ describe('normalizeInteger', () => {
     expect(() => normalizeInteger(value))
       .toThrow(TypeError, 'Invalid integer type: actual type is boolean');
   });
+  test('normalizeInteger("809373128651177984")', () => {
+    const value = '809373128651177984';
+    const result = normalizeInteger(value);
+    expect(result).toBe(809373128651177984n);
+  });
 });

@@ -6,13 +6,14 @@
 //    All rights reserved.
 //
 ////////////////////////////////////////////////////////////////////////////////
+import Json from '@haixing_hu/json';
 
 /**
- * 将某个字段值正则化为表示整数的`Number`对象。
+ * 将某个字段值正则化为表示整数的`Number`或`bigint`对象。
  *
- * @param {string|number} value
+ * @param {string|number|bigint} value
  *     待正则化的字段值。
- * @return {number|null}
+ * @return {number|bigint|null}
  *     正则化的结果。
  */
 function normalizeInteger(value) {
@@ -28,7 +29,7 @@ function normalizeInteger(value) {
     if (val === '') {
       return null;
     } if (/^[+-]?\d+$/.test(val)) {
-      return Number.parseInt(val, 10);
+      return Json.parse(val);
     } else {
       throw new RangeError(`Invalid integer format: "${value}"`);
     }
