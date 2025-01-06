@@ -6,7 +6,7 @@
 //    All rights reserved.
 //
 ////////////////////////////////////////////////////////////////////////////////
-import { trimString, trimUppercaseString, stringToFloat, stringToMoney } from '@haixing_hu/common-util';
+import { trimString, trimUppercaseString, stringToFloat, stringToMoney } from '@qubit-ltd/common-util';
 import normalizeDate from './normalize-date';
 import normalizeDateTime from './normalize-date-time';
 import normalizeTime from './normalize-time';
