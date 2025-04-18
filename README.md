@@ -9,6 +9,55 @@
 [@qubit-ltd/common-normalizer] is a JavaScript ES6 library of common field 
 normalizers.
 
+## <span id="installation">Installation</span>
+
+Install with npm:
+
+```bash
+npm install @qubit-ltd/common-normalizer
+```
+
+Or with yarn:
+
+```bash
+yarn add @qubit-ltd/common-normalizer
+```
+
+## <span id="usage">Usage</span>
+
+This library provides various functions for normalizing different types of data:
+
+```javascript
+import {
+  normalizeBool,         // normalize boolean values
+  normalizeInteger,      // normalize integers
+  normalizeDate,         // normalize dates
+  normalizeDateTime,     // normalize date-time
+  normalizeTime,         // normalize time
+  normalizeTimestamp,    // normalize timestamps
+  Normalizer,            // Normalizer class
+} from '@qubit-ltd/common-normalizer';
+
+// Normalize boolean values
+const boolResult = normalizeBool('true');  // returns true
+const boolResult2 = normalizeBool('');     // returns null
+
+// Normalize integers
+const intResult = normalizeInteger('123'); // returns 123
+const intResult2 = normalizeInteger('');   // returns null
+
+// Using the Normalizer class
+const normalizer = new Normalizer();
+normalizer.bool('isActive');          // normalizes isActive field to boolean
+normalizer.integer('count');          // normalizes count field to integer
+normalizer.date('birthDate');         // normalizes birthDate field to date
+```
+
+For more detailed usage examples, please refer to the API documentation.
+
+## <span id="api">API Documentation</span>
+
+Full API documentation can be found at the [project documentation site](https://haixing-hu.github.io/js-common-normalizer/).
 
 ## <span id="contributing">Contributing</span>
 
