@@ -2205,8 +2205,8 @@ __metadata:
     rollup-plugin-visualizer: "npm:^5.14.0"
   peerDependencies:
     "@babel/runtime": ^7.26.0
-    "@qubit-ltd/common-util": ^5.3.4
-    "@qubit-ltd/json": ^1.1.4
+    "@qubit-ltd/common-util": ^5.4.0
+    "@qubit-ltd/json": ^1.2.0
     dayjs: ^1.11.13
   languageName: unknown
   linkType: soft
