@@ -73,6 +73,7 @@
     "@rollup/plugin-terser": "^0.4.4",
     "babel-jest": "^29.7.0",
     "check-es-version": "^1.5.1",
+    "clean-jsdoc-theme": "^4.3.0",
     "core-js": "^3.41.0",
     "cross-env": "^7.0.3",
     "dayjs": "^1.11.13",
