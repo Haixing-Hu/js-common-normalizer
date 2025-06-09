@@ -1,6 +1,6 @@
 {
   "name": "@qubit-ltd/common-normalizer",
-  "version": "1.8.2",
+  "version": "1.8.3",
   "description": "A JavaScript ES6 library for common fields normalizers",
   "author": "Haixing Hu (starfish.hu@gmail.com)",
   "license": "Apache-2.0",
